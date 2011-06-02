@@ -1,11 +1,11 @@
 Name: kbibtex
 Version: 0.3
-Release: 0.beta2.1
+Release: 1
 Summary: A BibTeX editor for KDE 
 Group: Editors
 License: GPLv2+
 URL: http://home.gna.org/kbibtex/
-Source0: http://download.gna.org/kbibtex/0.3/%{name}-%{version}-beta2.tar.bz2
+Source0: http://download.gna.org/kbibtex/0.3/%{name}-%{version}.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: kdelibs4-devel
 BuildRequires: libpoppler-qt4-devel
@@ -16,7 +16,7 @@ BuildRequires: libxslt-devel
 KBibTeX is a BibTeX editor for KDE
 
 %prep
-%setup -qn %{name}-%{version}-beta2
+%setup -qn %{name}-%{version}
 
 %build
 %cmake_kde4
