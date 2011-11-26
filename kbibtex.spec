@@ -25,12 +25,10 @@ KBibTeX is a BibTeX editor for KDE
 rm -rf %buildroot
 %makeinstall_std -C build
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(-,root,root,-) 
 %doc README
 %{_kde_bindir}/*
