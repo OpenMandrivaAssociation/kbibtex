@@ -35,6 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_kde_libdir}/*.so
 %{_kde_libdir}/kde4/*.so
 %{_kde_appsdir}/%{name}*
+%{_kde_configdir}/kbibtexrc
 %{_kde_datadir}/mime/packages/*.xml
 %{_kde_services}/*.desktop
 %{_kde_applicationsdir}/*.desktop
