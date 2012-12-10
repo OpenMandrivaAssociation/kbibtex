@@ -41,3 +41,25 @@ rm -rf $RPM_BUILD_ROOT
 %{_kde_applicationsdir}/*.desktop
 %{_kde_iconsdir}/*/*/*/*
 %{_kde_mandir}/man1/*
+
+
+%changelog
+* Sat Nov 26 2011 Funda Wang <fwang@mandriva.org> 0.4-1
++ Revision: 733538
+- update file list
+- there is no lang files
+- new version 0.4
+
+* Thu Jun 02 2011 Funda Wang <fwang@mandriva.org> 0.3-1
++ Revision: 682441
+- new verison 0.3
+
+* Sun May 01 2011 Funda Wang <fwang@mandriva.org> 0.3-0.beta2.1
++ Revision: 661259
+- import kbibtex
+
+
+* Tue Jan 23 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 0.1.5-1mdv2007.0
++ Revision: 112281
+- Import kbibtex
+
