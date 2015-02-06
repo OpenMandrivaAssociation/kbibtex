@@ -6,7 +6,7 @@
 
 Name:		kbibtex
 Version:	0.4.1
-Release:	1
+Release:	2
 Summary:	A BibTeX editor for KDE
 Group:		Editors
 License:	GPLv2+
