@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kbibtex-0.4.1.tar.bz2: 0c2f9a9acee9ad9acd3b0a2f52529439fd9bb64a
+sources:
+  kbibtex-0.7.tar.xz: f9fe5908508dbdc3bffc09b81b2611cd15048a82
