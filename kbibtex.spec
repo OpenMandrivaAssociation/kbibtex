@@ -1,19 +1,50 @@
-%define major 0.7
+%define major 0
 %define libname %mklibname %{name} %{major}
 %define develname %mklibname -d %{name}
 
 Name:		kbibtex
-Version:	0.7
+Version:	0.8.1
 Release:	1
 Summary:	A BibTeX editor for KDE
 Group:		Editors
 License:	GPLv2+
 URL:		http://home.gna.org/kbibtex/
-Source0:	http://download.kde.org/stable/KBibTeX/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel
+Source0:	http://download.kde.org/stable/KBibTeX/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
-BuildRequires:	pkgconfig(poppler-qt4)
+BuildRequires:	pkgconfig(poppler-qt5)
+BuildRequires: cmake(ECM)
+
+BuildRequires: cmake(Qt5Qml)
+BuildRequires: cmake(Qt5Quick)
+BuildRequires: cmake(Qt5WebChannel)
+BuildRequires: cmake(Qt5WebEngineCore)
+BuildRequires: cmake(Qt5PrintSupport)
+BuildRequires: cmake(Qt5WebEngineWidgets)
+BuildRequires: cmake(Qt5WebKitWidgets)
+BuildRequires: cmake(Qt5Core)
+BuildRequires: cmake(Qt5Gui)
+BuildRequires: cmake(Qt5Widgets)
+BuildRequires: cmake(Qt5Network)
+BuildRequires: cmake(Qt5XmlPatterns)
+BuildRequires: cmake(Qt5)
+BuildRequires: cmake(Qt5Test)
+
+BuildRequires: cmake(KF5DocTools)
+BuildRequires: cmake(KF5I18n)
+BuildRequires: cmake(KF5XmlGui)
+BuildRequires: cmake(KF5KIO)
+BuildRequires: cmake(KF5IconThemes)
+BuildRequires: cmake(KF5ItemViews)
+BuildRequires: cmake(KF5Completion)
+BuildRequires: cmake(KF5Parts)
+BuildRequires: cmake(KF5CoreAddons)
+BuildRequires: cmake(KF5Service)
+BuildRequires: cmake(KF5Wallet)
+BuildRequires: cmake(KF5Crash)
+BuildRequires: cmake(KF5)
+
+BuildRequires: cmake(Qca-qt5)
 
 %description
 KBibTeX is a BibTeX editor for KDE.
@@ -39,30 +70,31 @@ Library files for KBibTeX.
 %build
 export CC=gcc
 export CXX=g++
-%cmake_kde4
-%make
+%cmake_kde5
+%ninja
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
-%find_lang %name --with-html
+%find_lang %name --with-html --with-man
 
 %files -f %{name}.lang
 %doc README
-%{_kde_bindir}/%{name}
-%{_kde_libdir}/kde4/kbibtexpart.so
-%{_kde_appsdir}/%{name}*
-%{_kde_configdir}/kbibtexrc
-%{_kde_datadir}/mime/packages/*.xml
-%{_kde_services}/*.desktop
-%{_kde_applicationsdir}/*.desktop
-%{_kde_datadir}/appdata/%{name}.appdata.xml
-%{_kde_iconsdir}/*/*/*/*
+%{_bindir}/%{name}
+%{_libdir}/qt5/plugins/kbibtexpart.so
+%{_datadir}/%{name}
+%{_datadir}/kxmlgui5/%{name}*/*.rc
+%{_sysconfdir}/xdg/kbibtexrc
+%{_datadir}/mime/packages/*.xml
+%{_datadir}/kservices5/*.desktop
+%{_datadir}/applications/*.desktop
+%{_datadir}/metainfo/org.kde.%{name}.appdata.xml
+%{_iconsdir}/*/*/*/*
+%{_mandir}/man1/%{name}.*
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}
 %{_libdir}/*.so.%{major}.*
 
 %files -n %{develname}
-%{_includedir}/kbibtex
-%{_kde_libdir}/*.so
+%{_libdir}/*.so
