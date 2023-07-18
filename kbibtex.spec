@@ -91,6 +91,7 @@ Library files for KBibTeX.
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/applications/*.desktop
 %{_datadir}/metainfo/org.kde.%{name}.appdata.xml
+%{_datadir}/qlogging-categories5/kbibtex.categories
 %{_iconsdir}/*/*/*/*
 %{_mandir}/man1/%{name}.*
 
@@ -100,3 +101,6 @@ Library files for KBibTeX.
 
 %files -n %{develname}
 %{_libdir}/*.so
+%{_libdir}/cmake/KBibTeX/
+%{_includedir}/KBibTeX/
+
