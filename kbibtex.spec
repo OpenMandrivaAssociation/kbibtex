@@ -3,7 +3,7 @@
 %define develname %mklibname -d %{name}
 
 Name:		kbibtex
-Version:	0.9.2
+Version:	0.10.0
 Release:	1
 Summary:	A BibTeX editor for KDE
 Group:		Editors
