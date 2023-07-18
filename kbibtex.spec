@@ -70,8 +70,8 @@ Library files for KBibTeX.
 %setup -q
 
 %build
-export CC=gcc
-export CXX=g++
+#export CC=gcc
+#export CXX=g++
 %cmake_kde5
 %ninja
 
@@ -81,12 +81,12 @@ export CXX=g++
 %find_lang %name --with-html --with-man
 
 %files -f %{name}.lang
-%doc README
+%doc README*
 %{_bindir}/%{name}
 %{_libdir}/qt5/plugins/kbibtexpart.so
 %{_datadir}/%{name}
 %{_datadir}/kxmlgui5/%{name}*/*.rc
-%{_sysconfdir}/xdg/kbibtexrc
+#{_sysconfdir}/xdg/kbibtexrc
 %{_datadir}/mime/packages/*.xml
 %{_datadir}/kservices5/*.desktop
 %{_datadir}/applications/*.desktop
