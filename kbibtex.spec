@@ -42,6 +42,7 @@ BuildRequires: cmake(KF5CoreAddons)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Wallet)
 BuildRequires: cmake(KF5Crash)
+BuildRequires: cmake(KF5TextEditor)
 BuildRequires: cmake(KF5)
 
 BuildRequires: cmake(Qca-qt5)
