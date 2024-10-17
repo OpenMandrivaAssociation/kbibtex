@@ -8,7 +8,7 @@ Release:	1
 Summary:	A BibTeX editor for KDE
 Group:		Editors
 License:	GPLv2+
-URL:		http://home.gna.org/kbibtex/
+URL:		https://home.gna.org/kbibtex/
 Source0:	http://download.kde.org/stable/KBibTeX/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
